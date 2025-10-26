@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Student Record System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Dashboard</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <section class="dashboard">
+    <h2>Welcome to the Dashboard</h2>
+    <p id="welcome-text"></p>
+
+    <!-- Admin Dashboard -->
+    <div id="admin-options" class="dashboard-buttons" style="display:none;">
+      <h3>Admin Actions</h3>
+
+      <div class="card">
+        <h4>Add Student</h4>
+        <form id="add-student-form" onsubmit="addStudent(event)">
+          <input type="text" id="s-id" placeholder="Student ID" required>
+          <input type="text" id="s-name" placeholder="Name" required>
+          <input type="number" step="0.01" id="s-gpa" placeholder="GPA" required>
+          <input type="number" id="s-att" placeholder="Attendance (days present)" required>
+          <input type="text" id="s-courses" placeholder="Courses (comma-separated)" required>
+          <button type="submit">Add Student</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h4>View All Students</h4>
+        <button onclick="viewAllStudents()">Show All</button>
+        <table id="students-table">
+          <thead>
+            <tr>
+              <th>ID</th><th>Name</th><th>GPA</th><th>Attendance</th><th>Courses</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h4>Update Attendance</h4>
+        <form onsubmit="updateAttendance(event)">
+          <input type="text" id="att-id" placeholder="Student ID" required>
+          <input type="number" id="att-days" placeholder="Days Present" required>
+          <button type="submit">Update</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h4>Search Student by ID</h4>
+        <form onsubmit="searchStudent(event)">
+          <input type="text" id="search-id" placeholder="Student ID" required>
+          <button type="submit">Search</button>
+        </form>
+        <div id="search-result"></div>
+      </div>
+    </div>
+
+    <!-- Student Dashboard -->
+    <div id="student-options" class="dashboard-buttons" style="display:none;">
+      <h3>Student Options</h3>
+      <button onclick="viewMyDetails()">View My Details</button>
+      <button onclick="viewMyAttendance()">View My Attendance</button>
+      <div id="student-view"></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

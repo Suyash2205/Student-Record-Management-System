@@ -1,0 +1,503 @@
+/* ====== Cherry Mocha Theme CSS ====== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --cherry: #9e3a46;
+  --mocha: #3b2f2f;
+  --cream: #f5ebe0;
+  --rose: #d7a7a0;
+  --light: #fff8f6;
+  --shadow: rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--mocha);
+  line-height: 1.6;
+}
+
+/* ====== Header / Navbar ====== */
+header.navbar {
+  background: var(--cherry);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--rose);
+}
+
+.login-link {
+  background: var(--rose);
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: white;
+}
+
+.login-link:hover {
+  background: var(--cream);
+  color: var(--cherry);
+}
+
+/* ====== Hero Section ====== */
+.hero {
+  background: linear-gradient(to right, var(--cherry), var(--mocha));
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+}
+
+.btn {
+  background: var(--rose);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: white;
+  color: var(--cherry);
+}
+
+/* ====== Features Section ====== */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  background-color: var(--cream);
+}
+
+.feature-box {
+  background: white;
+  width: 300px;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 15px var(--shadow);
+}
+
+/* ====== Login Page ====== */
+.login-container {
+  max-width: 420px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--cherry);
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+form input:focus {
+  border-color: var(--cherry);
+  outline: none;
+}
+
+form button {
+  background: var(--cherry);
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: var(--mocha);
+}
+
+/* ====== Dashboard ====== */
+.dashboard {
+  padding: 2rem;
+  text-align: center;
+}
+
+.dashboard h2 {
+  color: var(--cherry);
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.dashboard-buttons button {
+  background: var(--rose);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dashboard-buttons button:hover {
+  background: var(--cherry);
+  transform: translateY(-4px);
+}
+
+/* ====== About / Programs / Admissions ====== */
+.page {
+  max-width: 900px;
+  margin: 3rem auto;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+.page h2 {
+  color: var(--cherry);
+  margin-bottom: 1rem;
+}
+
+.page p {
+  margin-bottom: 1rem;
+}
+
+/* ====== Admissions Form ====== */
+.admission-form input,
+.admission-form textarea,
+.admission-form select {
+  margin-bottom: 1rem;
+}
+
+.admission-form button {
+  background: var(--cherry);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.admission-form button:hover {
+  background: var(--mocha);
+}
+
+/* ====== Footer ====== */
+.footer {
+  background: var(--mocha);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-box {
+    width: 90%;
+  }
+
+  nav a {
+    margin-left: 0.6rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+}
+
+/* ====== ABOUT PAGE – Themed Overrides & Enhancements ====== */
+
+/* Make the existing <header> match theme even without .navbar */
+header {
+  background: var(--cherry);
+  color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+header nav {
+  margin-top: 0.5rem;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+header nav a:hover,
+header nav a:focus {
+  color: var(--rose);
+  outline: none;
+}
+
+/* Card-style container for the About content */
+.section {
+  max-width: 960px;
+  margin: 2.5rem auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px var(--shadow);
+  border: 1px solid rgba(157, 58, 70, 0.08);
+}
+
+.section h2 {
+  color: var(--cherry);
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--cherry), var(--rose));
+  margin-top: 8px;
+}
+
+.section p {
+  margin: 0.75rem 0;
+  color: var(--mocha);
+}
+
+/* Subtle info chips you can sprinkle inside paragraphs/list items */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--cream);
+  color: var(--cherry);
+  border: 1px solid rgba(157, 58, 70, 0.15);
+}
+
+/* Optional grid for highlights/USPs (use .about-grid > .about-card) */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.about-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px var(--shadow);
+}
+
+.about-card h3 {
+  color: var(--mocha);
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Optional statistic blocks (use .about-stats > .stat) */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.stat {
+  background: linear-gradient(180deg, #fff, #fff8f6);
+  border: 1px solid rgba(157, 58, 70, 0.12);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat .num {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cherry);
+  line-height: 1.1;
+}
+
+.stat .label {
+  font-size: 0.9rem;
+  color: var(--mocha);
+  opacity: 0.9;
+}
+
+/* Optional vertical timeline (use .timeline > li) */
+.timeline {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0 0 0 1.25rem;
+  border-left: 3px solid var(--rose);
+}
+
+.timeline li {
+  position: relative;
+  margin: 0 0 1rem 0;
+  padding-left: 0.75rem;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0.2rem;
+  width: 10px;
+  height: 10px;
+  background: var(--cherry);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--rose);
+}
+
+.timeline .title {
+  font-weight: 600;
+  color: var(--mocha);
+}
+
+.timeline .meta {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Make the plain <footer> match your theme */
+footer {
+  background: var(--mocha);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0.75rem;
+  font-size: 0.95rem;
+  margin-top: 2.5rem;
+}
+
+/* ====== Responsive tweaks ====== */
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .about-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 0.9rem 1rem;
+  }
+  header h1 {
+    font-size: 1.4rem;
+  }
+  .section {
+    margin: 1.5rem 1rem;
+    padding: 1.25rem;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+}
+
