@@ -11,7 +11,9 @@
     <h1>Dashboard</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="login.html" onclick="logout()">Logout</a>
+      <span class="role-badge" id="role-badge">Logged in as: </span>
+      <span class="role-id" id="role-identifier"></span>
+      <button type="button" class="logout-btn" id="logout-button">Logout</button>
     </nav>
   </header>
 
@@ -23,34 +25,89 @@
     <div id="admin-options" class="dashboard-buttons" style="display:none;">
       <h3>Admin Actions</h3>
 
-      <div class="card">
+      <div class="card" id="add-student-card">
         <h4>Add Student</h4>
-        <form id="add-student-form" onsubmit="addStudent(event)">
+        <form id="add-student-form">
           <input type="text" id="s-id" placeholder="Student ID" required>
           <input type="text" id="s-name" placeholder="Name" required>
           <input type="number" step="0.01" id="s-gpa" placeholder="GPA" required>
           <input type="number" id="s-att" placeholder="Attendance (days present)" required>
+          <input type="number" id="s-total" placeholder="Total Working Days" required>
           <input type="text" id="s-courses" placeholder="Courses (comma-separated)" required>
           <button type="submit">Add Student</button>
         </form>
       </div>
 
+      <div class="card" id="data-tools-card">
+        <h4>Data Tools</h4>
+        <button type="button" id="seed-demo-data">Seed Demo Data</button>
+        <button type="button" id="reset-app-data">Reset App Data</button>
+      </div>
+
+      <div class="dashboard-stats" id="dashboard-stats">
+        <div class="stat-card">
+          <div class="stat-label">Total Students</div>
+          <div class="stat-value" id="stat-total">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Average GPA</div>
+          <div class="stat-value" id="stat-avg-gpa">0.0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Average Attendance %</div>
+          <div class="stat-value" id="stat-avg-attendance">0%</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Low Attendance Count</div>
+          <div class="stat-value" id="stat-low-attendance">0</div>
+        </div>
+      </div>
+
       <div class="card">
         <h4>View All Students</h4>
-        <button onclick="viewAllStudents()">Show All</button>
+        <div class="table-controls" id="table-controls">
+          <input
+            type="text"
+            id="search-input"
+            class="table-input"
+            placeholder="Search by Student ID or Name"
+          >
+          <select id="course-filter" class="table-select"></select>
+          <select id="sort-select" class="table-select">
+            <option value="name-asc">Name A–Z</option>
+            <option value="gpa-desc">GPA High–Low</option>
+            <option value="attendance-desc">Attendance % High–Low</option>
+          </select>
+          <select id="page-size" class="table-select">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+        <button type="button" id="view-all-btn">Show All</button>
         <table id="students-table">
           <thead>
             <tr>
               <th>ID</th><th>Name</th><th>GPA</th><th>Attendance</th><th>Courses</th>
+              <th id="actions-header">Actions</th>
             </tr>
           </thead>
           <tbody></tbody>
         </table>
+        <div class="empty-state" id="empty-state" style="display:none;">
+          <p>No students match your filters.</p>
+          <button type="button" class="btn-reset" id="reset-filters">Reset filters</button>
+        </div>
+        <div class="table-pagination" id="table-pagination">
+          <button type="button" class="page-btn" id="prev-page">Prev</button>
+          <span id="page-indicator">Page 1 of 1</span>
+          <button type="button" class="page-btn" id="next-page">Next</button>
+        </div>
       </div>
 
       <div class="card">
         <h4>Update Attendance</h4>
-        <form onsubmit="updateAttendance(event)">
+        <form id="update-attendance-form">
           <input type="text" id="att-id" placeholder="Student ID" required>
           <input type="number" id="att-days" placeholder="Days Present" required>
           <button type="submit">Update</button>
@@ -59,7 +116,7 @@
 
       <div class="card">
         <h4>Search Student by ID</h4>
-        <form onsubmit="searchStudent(event)">
+        <form id="search-form">
           <input type="text" id="search-id" placeholder="Student ID" required>
           <button type="submit">Search</button>
         </form>
@@ -70,12 +127,14 @@
     <!-- Student Dashboard -->
     <div id="student-options" class="dashboard-buttons" style="display:none;">
       <h3>Student Options</h3>
-      <button onclick="viewMyDetails()">View My Details</button>
-      <button onclick="viewMyAttendance()">View My Attendance</button>
+      <button type="button" id="view-details-btn">View My Details</button>
+      <button type="button" id="view-attendance-btn">View My Attendance</button>
       <div id="student-view"></div>
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <div id="modal-root"></div>
+  <script type="module" src="js/dashboard-admin.js"></script>
+  <script type="module" src="js/dashboard-student.js"></script>
 </body>
 </html>

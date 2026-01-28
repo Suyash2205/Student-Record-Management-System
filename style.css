@@ -265,6 +265,227 @@ form button:hover {
   transform: translateY(-4px);
 }
 
+/* ====== Dashboard Stats ====== */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px var(--shadow);
+  border: 1px solid rgba(157, 58, 70, 0.08);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--mocha);
+  opacity: 0.85;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cherry);
+  margin-top: 0.35rem;
+}
+
+.table-controls {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 0.6fr;
+  gap: 0.75rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.table-input,
+.table-select {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.table-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.page-btn {
+  background: var(--rose);
+  color: #fff;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.empty-state {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow);
+  border: 1px dashed rgba(157, 58, 70, 0.2);
+}
+
+.btn-reset {
+  margin-top: 0.8rem;
+  background: var(--cherry);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ====== Student Table Actions ====== */
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.action-btn {
+  background: var(--rose);
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.action-btn:hover {
+  background: var(--cherry);
+}
+
+.attendance-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(158, 58, 70, 0.12);
+  color: var(--cherry);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.low-attendance-row {
+  background: rgba(215, 167, 160, 0.12);
+}
+
+/* ====== Modal ====== */
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(59, 47, 47, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  padding: 1.5rem;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 12px 30px var(--shadow);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: var(--cream);
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--mocha);
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--mocha);
+}
+
+.modal-body {
+  padding: 1.25rem;
+}
+
+.modal-field {
+  margin-bottom: 0.9rem;
+}
+
+.modal-field label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.modal-field input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  padding: 0.9rem 1.25rem 1.1rem;
+}
+
+.modal-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modal-cancel {
+  background: #e7e0dc;
+  color: var(--mocha);
+}
+
+.modal-confirm {
+  background: var(--cherry);
+  color: #fff;
+}
+
+.modal-confirm:hover {
+  background: var(--mocha);
+}
+
 /* ====== About / Programs / Admissions ====== */
 .page {
   max-width: 900px;
@@ -312,6 +533,41 @@ form button:hover {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+}
+
+/* ====== Toast Notifications ====== */
+.toast-container {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  z-index: 1000;
+}
+
+.toast {
+  background: var(--mocha);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px var(--shadow);
+  font-size: 0.95rem;
+  min-width: 220px;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.toast-success {
+  background: var(--cherry);
+}
+
+.toast-error {
+  background: #b02a37;
+}
+
+.toast-hide {
+  opacity: 0;
+  transform: translateY(-6px);
 }
 
 /* ====== Responsive Design ====== */
@@ -366,6 +622,42 @@ header nav a:hover,
 header nav a:focus {
   color: var(--rose);
   outline: none;
+}
+
+/* ====== Dashboard Header Meta ====== */
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.role-id {
+  color: #fff;
+  font-size: 0.9rem;
+  margin-right: 0.8rem;
+}
+
+.logout-btn {
+  background: var(--rose);
+  color: #fff;
+  border: none;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.logout-btn:hover {
+  background: var(--cream);
+  color: var(--cherry);
 }
 
 /* Card-style container for the About content */
